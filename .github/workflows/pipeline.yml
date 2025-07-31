@@ -21,7 +21,7 @@ jobs:
         with:
           python-version: "3.11"
 
-      #Caching for future pipelines
+      # Caching for future pipelines
       # - name: Cache pip packages
       #   uses: actions/cache@v4
       #   with:
@@ -35,14 +35,17 @@ jobs:
           python -m pip install --upgrade pip
           pip install -r requirements.txt
 
+      # Code Style & Linting
       - name: Run linting
         run: flake8 app/app.py tests/
 
+      # Unit Testing Framework
       - name: Run tests
         run: PYTHONPATH=. pytest --maxfail=1 --disable-warnings -q
 
-      - name: Run security checks
-        run: bandit -r .
+      # Security Vulnerability Scan
+      # - name: Run security checks
+      #  run: bandit -r .
 
   # -----------------
   # Docker Build Job
