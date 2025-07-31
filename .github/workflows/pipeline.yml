@@ -39,7 +39,7 @@ jobs:
         run: flake8 app/app.py tests/
 
       - name: Run tests
-        run: pytest --maxfail=1 --disable-warnings -q
+        run: PYTHONPATH=. pytest --maxfail=1 --disable-warnings -q
 
       - name: Run security checks
         run: bandit -r .
