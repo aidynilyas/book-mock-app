@@ -22,4 +22,5 @@ jobs:
         with:
           context: .
           push: true
-          tags: ${{ secrets.DOCKERHUB_USERNAME }}/my-python-app:latest
+          file: ./Dockerfile
+          tags: ${{ secrets.DOCKERHUB_USERNAME }}/book-service:latest
