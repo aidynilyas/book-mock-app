@@ -36,7 +36,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run linting
-        run: flake8 app.py tests/
+        run: flake8 app/app.py tests/
 
       - name: Run tests
         run: pytest --maxfail=1 --disable-warnings -q
